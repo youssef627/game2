@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkpoint 1</title>
+    <style>
+        body {
+            background-color: #0b1120;
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background-color: #1c1f2a;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        h1 { color: #38bdf8; }
+        input {
+            padding: 12px;
+            font-size: 18px;
+            width: 60%;
+            border-radius: 6px;
+            border: none;
+            margin-top: 15px;
+            text-align: center;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #38bdf8;
+            color: #0b1120;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .error { color: #f87171; margin-top: 15px; display: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🔐 CHECKPOINT 1</h1>
+    <p>
+        WELCOME, AGENT.<br>
+        Your mission begins at a place where minds meet and stories echo.<br>
+        Seek the hall where Samir Kabany’s name whispers secrets.<br>
+        Discover the hidden code there and enter it below to proceed.
+    </p>
+
+    <input type="number" id="codeInput" placeholder="Enter secret code...">
+    <br>
+    <button onclick="checkCode()">SUBMIT</button>
+
+    <p class="error" id="errorText">❌ Wrong code, agent. Look again.</p>
+</div>
+
+<script>
+function checkCode() {
+    const correctCode = "293"; // Secret code for checkpoint 1
+    const userCode = document.getElementById("codeInput").value;
+
+    if (userCode === correctCode) {
+        window.location.href = "checkpoint2.html"; // Next page
+    } else {
+        document.getElementById("errorText").style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
